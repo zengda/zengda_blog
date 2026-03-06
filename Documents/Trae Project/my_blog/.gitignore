@@ -1,0 +1,22 @@
+# 虚拟环境
+myenv/
+
+# 数据库文件
+database.db
+
+# 编译文件
+__pycache__/
+*.pyc
+
+# 日志文件
+*.log
+
+# 编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
