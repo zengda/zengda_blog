@@ -9,7 +9,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('index') }}" 曾达的博客</a>
+        <a class="navbar-brand" href="{{ url_for('index') }}">曾达的博客</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,12 +23,21 @@
         </div>
     </nav>
     <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-info" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
         {% block content %} {% endblock %}
     </div>
 
-<script src="{{url_for('static', filename='js/jquery.slim.min.js')}}"</script>
-<script src="{{url_for('static', filename='js/popper.min.js')}}"</script>
-<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"</script>
+<script src="{{url_for('static', filename='js/jquery.slim.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
 
 
 </body>
